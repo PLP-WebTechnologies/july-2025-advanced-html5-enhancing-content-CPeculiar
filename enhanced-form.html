@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Content & Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #333;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #007acc;
+            color: white;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* List Styles */
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        /* Media Styles */
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .media-item {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        audio, video {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Form Styles */
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        fieldset {
+            border: 2px solid #007acc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+        
+        legend {
+            font-weight: bold;
+            color: #007acc;
+            padding: 0 10px;
+        }
+        
+        label {
+            display: block;
+            margin: 15px 0 5px 0;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            border-color: #007acc;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,122,204,0.3);
+        }
+        
+        input:valid {
+            border-color: #28a745;
+        }
+        
+        input:invalid:not(:placeholder-shown) {
+            border-color: #dc3545;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .form-row > div {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            font-weight: normal;
+        }
+        
+        .checkbox-group input, .radio-group input {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        button {
+            background-color: #007acc;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #005fa3;
+        }
+        
+        button[type="reset"] {
+            background-color: #6c757d;
+        }
+        
+        button[type="reset"]:hover {
+            background-color: #545b62;
+        }
+        
+        .required {
+            color: #dc3545;
+        }
+        
+        .readonly {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+            
+            .media-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Enhanced HTML5 Content & Forms Assignment</h1>
+            <p>Demonstrating advanced HTML5 content elements and comprehensive form creation with native validation.</p>
+        </header>
+
+        <main>
+            <!-- Lists Section -->
+            <section>
+                <h2>📋 Content Organization with Lists</h2>
+                
+                <h3>Unordered List - Web Development Technologies</h3>
+                <ul>
+                    <li><strong>Frontend Technologies</strong>
+                        <ul>
+                            <li>HTML5 - Semantic markup and structure</li>
+                            <li>CSS3 - Styling and responsive design</li>
+                            <li>JavaScript - Interactive functionality</li>
+                            <li>React - Component-based UI framework</li>
+                        </ul>
+                    </li>
+                    <li><strong>Backend Technologies</strong>
+                        <ul>
+                            <li>Node.js - Server-side JavaScript runtime</li>
+                            <li>Python - Versatile programming language</li>
+                            <li>PHP - Server-side scripting</li>
+                            <li>Java - Enterprise-level applications</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Ordered List - Web Development Process</h3>
+                <ol>
+                    <li>Requirements Analysis and Planning</li>
+                    <li>UI/UX Design and Wireframing</li>
+                    <li>Frontend Development and Styling</li>
+                    <li>Backend Development and Database Design</li>
+                    <li>Testing and Quality Assurance</li>
+                    <li>Deployment and Production Setup</li>
+                    <li>Maintenance and Updates</li>
+                </ol>
+
+                <h3>Definition List - HTML5 Form Elements</h3>
+                <dl>
+                    <dt><strong>Input Element</strong></dt>
+                    <dd>Allows users to enter data through various input types like text, email, password, etc.</dd>
+                    
+                    <dt><strong>Select Element</strong></dt>
+                    <dd>Creates a dropdown list allowing users to choose from predefined options.</dd>
+                    
+                    <dt><strong>Textarea Element</strong></dt>
+                    <dd>Provides a multi-line text input area for longer text content.</dd>
+                    
+                    <dt><strong>Fieldset Element</strong></dt>
+                    <dd>Groups related form elements together with an optional legend for better organization.</dd>
+                </dl>
+            </section>
+
+            <!-- Tables Section -->
+            <section>
+                <h2>📊 Data Presentation with Tables</h2>
+                
+                <h3>HTML5 Form Input Types Comparison</h3>
+                <table>
+                    <caption>Comprehensive overview of HTML5 input types and their validation capabilities</caption>
+                    <thead>
+                        <tr>
+                            <th>Input Type</th>
+                            <th>Purpose</th>
+                            <th>Built-in Validation</th>
+                            <th>Browser Support</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>email</td>
+                            <td>Email address input</td>
+                            <td>Email format validation</td>
+                            <td>Excellent</td>
+                        </tr>
+                        <tr>
+                            <td>tel</td>
+                            <td>Telephone number</td>
+                            <td>None (pattern attribute recommended)</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr>
+                            <td>url</td>
+                            <td>Website URL input</td>
+                            <td>URL format validation</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr>
+                            <td>number</td>
+                            <td>Numeric input</td>
+                            <td>Numeric validation with min/max</td>
+                            <td>Excellent</td>
+                        </tr>
+                        <tr>
+                            <td>date</td>
+                            <td>Date selection</td>
+                            <td>Date format validation</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td>Password input (masked)</td>
+                            <td>Length validation with minlength</td>
+                            <td>Excellent</td>
+                        </tr>
+                        <tr>
+                            <td>range</td>
+                            <td>Slider input</td>
+                            <td>Range validation</td>
+                            <td>Excellent</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Media Section -->
+            <section>
+                <h2>🎵 Media Integration</h2>
+                <div class="media-container">
+                    <div class="media-item">
+                        <h3>Sample Image</h3>
+                        <img src="https://picsum.photos/400/300?random=1" alt="Random sample image demonstrating HTML5 img element usage" />
+                        <p><em>Demonstrating responsive image implementation with proper alt text for accessibility.</em></p>
+                    </div>
+                    
+                    <div class="media-item">
+                        <h3>Audio Element</h3>
+                        <audio controls>
+                            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+                            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element. Please upgrade to a modern browser.
+                        </audio>
+                        <p><em>HTML5 audio element with multiple source formats for cross-browser compatibility.</em></p>
+                    </div>
+                    
+                    <div class="media-item">
+                        <h3>Video Element</h3>
+                        <video controls width="400" height="225">
+                            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                            <source src="https://sample-videos.com/zip/10/webm/SampleVideo_1280x720_1mb.webm" type="video/webm">
+                            <track kind="captions" src="captions.vtt" srclang="en" label="English">
+                            Your browser does not support the video element. Please upgrade to a modern browser.
+                        </video>
+                        <p><em>HTML5 video element with controls, multiple formats, and accessibility features.</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enhanced HTML5 Form Section -->
+            <section>
+                <h2>📝 Comprehensive HTML5 Form with Native Validation</h2>
+                
+                <form action="#" method="post" novalidate>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        
+                        <div class="form-row">
+                            <div>
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    required 
+                                    minlength="2" 
+                                    maxlength="50"
+                                    pattern="[A-Za-z\s]+"
+                                    placeholder="Enter your first name"
+                                    autocomplete="given-name"
+                                    title="Please enter your first name (letters and spaces only, 2-50 characters)"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    required 
+                                    minlength="2" 
+                                    maxlength="50"
+                                    pattern="[A-Za-z\s]+"
+                                    placeholder="Enter your last name"
+                                    autocomplete="family-name"
+                                    title="Please enter your last name (letters and spaces only, 2-50 characters)"
+                                >
+                            </div>
+                        </div>
+
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="example@domain.com"
+                            autocomplete="email"
+                            title="Please enter a valid email address"
+                        >
+
+                        <div class="form-row">
+                            <div>
+                                <label for="phone">Phone Number</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    placeholder="123-456-7890"
+                                    autocomplete="tel"
+                                    title="Please enter phone number in format: 123-456-7890"
+                                >
+                            </div>
+                            
+                            <div>
+                                <label for="birthDate">Date of Birth</label>
+                                <input 
+                                    type="date" 
+                                    id="birthDate" 
+                                    name="birthDate" 
+                                    min="1920-01-01" 
+                                    max="2010-12-31"
+                                    autocomplete="bday"
+                                >
+                            </div>
+                        </div>
+
+                        <label for="website">Personal Website</label>
+                        <input 
+                            type="url" 
+                            id="website" 
+                            name="website" 
+                            placeholder="https://www.example.com"
+                            autocomplete="url"
+                            title="Please enter a valid URL starting with http:// or https://"
+                        >
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Account Information</legend>
+                        
+                        <label for="username">Username <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            required 
+                            minlength="3" 
+                            maxlength="20"
+                            pattern="[a-zA-Z0-9_]+"
+                            placeholder="Choose a username"
+                            autocomplete="username"
+                            title="Username must be 3-20 characters long and contain only letters, numbers, and underscores"
+                        >
+
+                        <label for="password">Password <span class="required">*</span></label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            minlength="8" 
+                            maxlength="100"
+                            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            title="Password must be at least 8 characters long and include uppercase, lowercase, number, and special character"
+                        >
+
+                        <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            required 
+                            minlength="8"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            title="Please confirm your password"
+                        >
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Preferences & Additional Information</legend>
+                        
+                        <label for="age">Age</label>
+                        <input 
+                            type="number" 
+                            id="age" 
+                            name="age" 
+                            min="13" 
+                            max="120" 
+                            step="1"
+                            placeholder="Enter your age"
+                        >
+
+                        <label for="experience">Years of Experience in Web Development</label>
+                        <input 
+                            type="range" 
+                            id="experience" 
+                            name="experience" 
+                            min="0" 
+                            max="20" 
+                            value="5" 
+                            step="1"
+                        >
+                        <output for="experience">5 years</output>
+
+                        <label for="country">Country <span class="required">*</span></label>
+                        <select id="country" name="country" required autocomplete="country">
+                            <option value="">Select your country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                            <option value="jp">Japan</option>
+                            <option value="au">Australia</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <label for="skills">Programming Languages (select multiple)</label>
+                        <select id="skills" name="skills" multiple size="6">
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="php">PHP</option>
+                            <option value="csharp">C#</option>
+                            <option value="cpp">C++</option>
+                        </select>
+
+                        <fieldset>
+                            <legend>Preferred Learning Method</legend>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="learningMethod" value="visual" required>
+                                    Visual Learning
+                                </label>
+                                <label>
+                                    <input type="radio" name="learningMethod" value="auditory">
+                                    Auditory Learning
+                                </label>
+                                <label>
+                                    <input type="radio" name="learningMethod" value="kinesthetic">
+                                    Hands-on Learning
+                                </label>
+                                <label>
+                                    <input type="radio" name="learningMethod" value="reading">
+                                    Reading/Writing
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Areas of Interest</legend>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="interests" value="frontend">
+                                    Frontend Development
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="interests" value="backend">
+                                    Backend Development
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="interests" value="mobile">
+                                    Mobile Development
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="interests" value="design">
+                                    UI/UX Design
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="interests" value="database">
+                                    Database Management
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="interests" value="devops">
+                                    DevOps
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <label for="bio">Professional Bio</label>
+                        <textarea 
+                            id="bio" 
+                            name="bio" 
+                            rows="6" 
+                            cols="50" 
+                            maxlength="1000"
+                            placeholder="Tell us about your professional background and goals (optional, max 1000 characters)"
+                        ></textarea>
+
+                        <label for="referralCode">Referral Code (if applicable)</label>
+                        <input 
+                            type="text" 
+                            id="referralCode" 
+                            name="referralCode" 
+                            readonly 
+                            value="AUTO-GENERATED-2025" 
+                            class="readonly"
+                            title="This field is automatically generated and cannot be modified"
+                        >
+
+                        <label for="newsletter">
+                            <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+                            Subscribe to our newsletter for web development tips and updates
+                        </label>
+
+                        <label for="terms">
+                            <input type="checkbox" id="terms" name="terms" value="agreed" required>
+                            I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a> <span class="required">*</span>
+                        </label>
+                    </fieldset>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit">Create Account</button>
+                        <button type="reset">Clear Form</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+            <p>&copy; 2025 Enhanced HTML5 Forms Assignment - Demonstrating advanced HTML5 features and native form validation</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple script to update range input display
+        document.getElementById('experience').addEventListener('input', function() {
+            document.querySelector('output[for="experience"]').textContent = this.value + ' years';
+        });
+
+        // Password confirmation validation
+        document.getElementById('confirmPassword').addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            
+            if (password !== confirmPassword) {
+                this.setCustomValidity('Passwords do not match');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            const confirmPassword = document.getElementById('confirmPassword');
+            if (confirmPassword.value) {
+                confirmPassword.dispatchEvent(new Event('input'));
+            }
+        });
+    </script>
+</body>
+</html>
